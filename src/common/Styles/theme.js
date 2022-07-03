@@ -21,6 +21,7 @@ export const radius = {
 };
 
 export const fontSize = {
+	x_small: pxToRem(17),
 	small: pxToRem(19),
 	general: pxToRem(22),
 	large: pxToRem(25),
@@ -30,7 +31,7 @@ export const fontSize = {
 export const width = {
 	tablet: '600px',
 	desktop: '768px',
-	max_width: '1200px',
+	max_width: '986px',
 };
 
 export const media = {

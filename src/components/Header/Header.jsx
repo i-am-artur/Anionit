@@ -30,8 +30,8 @@ export default function Header() {
 	}, [shoppingCart]);
 
 	return (
-		<Wrapper>
-			<Component pathname={location.pathname}>
+		<Wrapper pathname={location.pathname}>
+			<Component>
 				<Logo />
 				<Navigation isDisplayed={isNavDisplayed} />
 				<Options>

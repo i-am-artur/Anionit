@@ -18,6 +18,9 @@ const slideUp = keyframes`
 `;
 
 export const Wrapper = styled.div`
+	background-color: ${({ pathname }) =>
+		pathname === routeList.home ? 'white' : colors.main};
+
 	.alert-enter-active {
 		animation: ${slideUp} 4s;
 	}
@@ -25,15 +28,12 @@ export const Wrapper = styled.div`
 
 export const Component = styled.header`
 	display: flex;
-	// max-width: ${width.max_width};
 	margin-left: auto;
 	margin-right: auto;
 	justify-content: space-between;
-	align-items: center;
+	align-items: baseline;
 	padding: ${gap.general};
 	position: relative;
-	background-color: ${({ pathname }) =>
-		pathname === routeList.home ? 'white' : colors.main};
 `;
 export const Options = styled.div`
 	display: flex;

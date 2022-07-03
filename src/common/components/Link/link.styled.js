@@ -3,10 +3,7 @@ import { pxToRem } from '../../Styles/helpers';
 import { Link } from 'react-router-dom';
 
 export const LinkStyle = styled(Link)`
-	padding-top: 10px;
-	padding-bottom: 10px;
-	padding-left: 16px;
-	padding-right: 16px;
+	padding: 10px 16px;
 	text-align: center;
 	font-size: ${pxToRem(16)};
 	border: none;

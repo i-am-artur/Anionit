@@ -12,7 +12,6 @@ export const Nav = styled.nav`
 	width: 100%;
 	padding: ${gap.original};
 	text-align: end;
-	font-size: ${fontSize.large};
 	font-weight: bold;
 	background-color: ${({ pathname }) =>
 		pathname === routeList.home ? 'white' : colors.main};
@@ -28,10 +27,12 @@ export const Nav = styled.nav`
 export const Menu = styled.ul`
 	padding: 0;
 	margin: 0;
+	font-size: ${fontSize.large};
 	list-style-type: none;
 
 	${media.Desktop} {
-		width: 450px;
+		column-gap: ${gap.section};
+		font-size: ${fontSize.x_small};
 		display: flex;
 		justify-content: space-evenly;
 	}

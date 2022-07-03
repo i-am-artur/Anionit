@@ -41,6 +41,7 @@ input, select {
 }
 
 p {
-	margin: ${gap.original} auto;
+	margin-top: ${gap.original};
+	margin-bottom: ${gap.original};
 }
 `;
