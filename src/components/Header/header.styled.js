@@ -1,9 +1,26 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { colors, gap, width } from '../../common/Styles/theme';
 import routeList from '../AppRouter/routeList';
 
+const slideUp = keyframes`
+  0% {
+  	box-shadow: none;
+  }
+  60% {
+  	box-shadow: 1px 1px 13px 0 #0400ff;
+  }
+  80% {
+  	box-shadow: none;
+  }
+  100% {
+  	box-shadow: 1px 1px 13px 0 #0400ff;
+  }
+`;
+
 export const Wrapper = styled.div`
-	// background-color: ${colors.main};
+	.alert-enter-active {
+		animation: ${slideUp} 4s;
+	}
 `;
 
 export const Component = styled.header`

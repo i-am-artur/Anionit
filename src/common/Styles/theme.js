@@ -28,7 +28,9 @@ export const fontSize = {
 };
 
 export const width = {
-	max_width: '400px',
+	tablet: '600px',
+	desktop: '768px',
+	max_width: '1200px',
 };
 
 export const media = {

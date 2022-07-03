@@ -6,6 +6,7 @@ export const Wrapper = styled.footer`
 	text-align: center;
 	color: #7a7a7a;
 	background-color: #181818;
+	z-index: 100;
 `;
 
 export const AuthorLink = styled.a`

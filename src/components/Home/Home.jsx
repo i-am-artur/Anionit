@@ -1,30 +1,44 @@
 import {
 	Advantages,
+	Animation,
 	Description,
 	Heading,
 	Section,
-	TransitionFragment,
 } from './home.styled';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import { useState } from 'react';
-// let CSSTransitionGroup = require('react-transition-group/CSSTransition');
+import { CSSTransition } from 'react-transition-group';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getStates } from '../../store/selectors';
+import { setHomeAnimationIsDone } from '../../store/animation/actionCreators';
 
 export default function Home() {
-	const [s, setS] = useState(true);
+	const states = useSelector(getStates);
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		document.body.style.overflow = 'hidden';
+		dispatch(setHomeAnimationIsDone(false));
+
+		return () => {
+			document.body.style.overflow = 'auto';
+		};
+	}, [dispatch]);
 	return (
 		<Section>
-			<button onClick={() => setS(!s)}>hkj</button>
-			{/*<TransitionGroup>*/}
 			<CSSTransition
-				in={s}
+				in={!states.isHomeAnimationDone}
 				classNames='alert'
-				timeout={2000}
-				unmountOnExit
-				onEnter={() => console.log('jh')}
+				timeout={2500}
+				onEntered={() => dispatch(setHomeAnimationIsDone(true))}
 			>
-				<Heading>ANIONIT</Heading>
+				<Animation>
+					<Heading>ANIONIT</Heading>
+					<Advantages>
+						Jeden z najlepszych, bo najbardziej bezpieczny i skuteczny
+					</Advantages>
+					<Description>Preparat Biobójczy</Description>
+				</Animation>
 			</CSSTransition>
-			{/*</TransitionGroup>*/}
 		</Section>
 	);
 }
