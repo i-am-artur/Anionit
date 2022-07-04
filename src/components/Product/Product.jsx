@@ -4,9 +4,12 @@ import routeList from '../AppRouter/routeList';
 import { ProductTitle, ProductWrapper } from '../../common/Styles/common';
 import {
 	Description,
+	Image,
 	Order,
 	Price,
 	PriceWrapper,
+	ProductHeader,
+	ProductHeading,
 	Total,
 } from './product.styled';
 import { ProductQuantity } from './components/ProductQuantity/ProductQuantity';
@@ -42,30 +45,34 @@ export default function Product() {
 			<LinkBack />
 			{product && (
 				<ProductWrapper>
-					<img
-						src={require(`../../assets/${product.image}`)}
-						alt={product.title}
-					/>
-					<ProductTitle color={product.color}>{product.title}</ProductTitle>
+					<ProductHeader>
+						<Image
+							src={require(`../../assets/${product.image}`)}
+							alt={product.title}
+						/>
+						<ProductHeading>
+							<ProductTitle color={product.color}>{product.title}</ProductTitle>
 
-					<PriceWrapper>
-						Cena: <Price color={product.color}>{getPrice(product)}</Price>
-					</PriceWrapper>
+							<PriceWrapper>
+								Cena: <Price color={product.color}>{getPrice(product)}</Price>
+							</PriceWrapper>
 
-					{product.volumes.map((volume) => (
-						<ProductQuantity product={product} volume={volume} key={volume}>
-							Kanister {volume}l
-						</ProductQuantity>
-					))}
+							{product.volumes.map((volume) => (
+								<ProductQuantity product={product} volume={volume} key={volume}>
+									Kanister {volume}l
+								</ProductQuantity>
+							))}
 
-					<Order>
-						<div>
-							Suma: <Total color={product.color}>{totalSum} zł</Total>
-						</div>
-						<ButtonLink bgcolor={product.color} to={routeList.checkout}>
-							Zamówienie
-						</ButtonLink>
-					</Order>
+							<Order>
+								<div>
+									Suma: <Total color={product.color}>{totalSum} zł</Total>
+								</div>
+								<ButtonLink bgcolor={product.color} to={routeList.checkout}>
+									Zamówienie
+								</ButtonLink>
+							</Order>
+						</ProductHeading>
+					</ProductHeader>
 					<Description
 						dangerouslySetInnerHTML={{ __html: product.description }}
 					/>

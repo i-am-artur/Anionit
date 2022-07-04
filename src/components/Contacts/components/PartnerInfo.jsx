@@ -1,5 +1,5 @@
 import content from '../content';
-import { Wrapper } from '../contacts.styled';
+import { CompanyDescription, Image, Wrapper } from './company.styled';
 import partnerLogo from '../../../assets/pervet.png';
 import { Fragment } from 'react';
 
@@ -8,7 +8,7 @@ export function PartnerInfo() {
 		<Fragment>
 			{content.partner.title}:
 			<Wrapper>
-				<div>
+				<CompanyDescription>
 					<h3>{content.partner.name}</h3>
 					<address>
 						<div>
@@ -29,8 +29,8 @@ export function PartnerInfo() {
 							{content.partner.email}
 						</a>
 					</div>
-				</div>
-				<img src={partnerLogo} alt={`Logo ${content.partner.name}`} />
+				</CompanyDescription>
+				<Image src={partnerLogo} alt={`Logo ${content.partner.name}`} />
 			</Wrapper>
 		</Fragment>
 	);

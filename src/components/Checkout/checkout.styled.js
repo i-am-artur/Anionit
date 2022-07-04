@@ -1,8 +1,18 @@
 import styled from 'styled-components';
-import { gap } from '../../common/Styles/theme';
+import { gap, media } from '../../common/Styles/theme';
 import { pxToRem } from '../../common/Styles/helpers';
 import Input from '../../common/components/Input/Input';
 import { ButtonLink } from '../../common/components/Link/ButtonLink';
+
+export const Wrapper = styled.div`
+	display: grid;
+	grid-template-columns: 1fr;
+	column-gap: ${gap.m_section};
+
+	${media.Desktop} {
+		grid-template-columns: 1fr 1fr;
+	}
+`;
 
 export const ShoppingCart = styled.div`
 	margin-top: 12px;
@@ -12,6 +22,10 @@ export const ShoppingCart = styled.div`
 	display: grid;
 	grid-template-columns: auto min-content min-content;
 	align-items: center;
+
+	${media.Tablet} {
+		grid-template-columns: auto auto min-content;
+	}
 `;
 
 export const Heading = styled.h3`
@@ -25,10 +39,16 @@ export const Total = styled.div`
 `;
 
 export const ProductSelect = styled.div``;
+
 export const ClientInfo = styled.div`
 	display: flex;
 	flex-direction: column;
 	row-gap: ${gap.original};
+
+	${media.Desktop} {
+		padding: 24px;
+		background-color: #e9e9e9;
+	}
 `;
 
 export const CheckoutInput = styled(Input)`

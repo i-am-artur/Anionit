@@ -5,6 +5,7 @@ export const ProductSelect = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	column-gap: ${gap.general};
 `;
 export const Quantity = styled.div`
 	column-gap: ${gap.original};

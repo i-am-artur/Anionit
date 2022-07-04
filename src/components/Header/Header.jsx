@@ -6,10 +6,11 @@ import shoppingCart1 from '../../assets/shopping-cart.svg';
 import Navigation from './Navigation/Navigation';
 
 import { useMemo, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { getShoppingCart, getStates } from '../../store/selectors';
 import CSSTransition from 'react-transition-group/cjs/CSSTransition';
+import routeList from '../AppRouter/routeList';
 
 export default function Header() {
 	const [isNavDisplayed, setNavDisplayed] = useState(false);
@@ -35,10 +36,11 @@ export default function Header() {
 				<Logo />
 				<Navigation isDisplayed={isNavDisplayed} />
 				<Options>
-					<ShoppingCart items_quantity={cartItems_quantity}>
-						<img width='100%' src={shoppingCart1} alt='shopping cart' />
-					</ShoppingCart>
-
+					<Link to={routeList.checkout}>
+						<ShoppingCart items_quantity={cartItems_quantity}>
+							<img width='100%' src={shoppingCart1} alt='shopping cart' />
+						</ShoppingCart>
+					</Link>
 					<CSSTransition
 						in={states.isHomeAnimationDone}
 						timeout={4000}

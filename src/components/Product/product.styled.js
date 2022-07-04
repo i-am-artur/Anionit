@@ -1,5 +1,36 @@
 import styled from 'styled-components';
-import { gap } from '../../common/Styles/theme';
+import { gap, media } from '../../common/Styles/theme';
+
+export const ProductHeader = styled.div`
+	row-gap: ${gap.original};
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	${media.Tablet} {
+		display: grid;
+		column-gap: ${gap.general};
+		grid-template-columns: 186px auto;
+	}
+
+	${media.Desktop} {
+		grid-template-columns: 300px auto;
+	}
+`;
+
+export const ProductHeading = styled.div`
+	display: flex;
+	flex-direction: column;
+	row-gap: ${gap.original};
+
+	${media.Tablet} {
+		align-items: flex-end;
+	}
+`;
+
+export const Image = styled.img`
+	width: 100%;
+`;
 
 export const PriceWrapper = styled.div`
 	text-align: right;
@@ -12,6 +43,7 @@ export const Price = styled.span`
 `;
 
 export const Order = styled.div`
+	column-gap: ${gap.general};
 	display: flex;
 	align-items: center;
 	justify-content: space-between;

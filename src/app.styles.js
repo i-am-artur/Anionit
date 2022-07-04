@@ -1,19 +1,21 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import routeList from './components/AppRouter/routeList';
-import { fontSize, gap, media, width } from './common/Styles/theme';
+import { gap, width } from './common/Styles/theme';
 
-export const Main = styled.main`
+const homePage = css`
+	padding: 0;
+`;
+const otherPages = css`
+	box-sizing: border-box;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	padding: ${gap.general} ${gap.general} 50px ${gap.general};
 	max-width: ${width.max_width};
+`;
+export const Main = styled.main`
 	display: flex;
 	flex-direction: column;
 	flex: 1;
-	padding: ${({ pathname }) =>
-		pathname === routeList.home
-			? '0'
-			: `${gap.general} ${gap.general} 50px ${gap.general}`};
-
-	${media.Desktop} {
-		margin-left: auto;
-		margin-right: auto;
-	}
+	${({ pathname }) => (pathname === routeList.home ? homePage : otherPages)}}
 `;

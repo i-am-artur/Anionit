@@ -1,11 +1,11 @@
-import { Wrapper } from '../contacts.styled';
+import { CompanyDescription, Image, Wrapper } from './company.styled';
 import content from '../content';
 import companyLogo from '../../../assets/gtpuritas.jpg';
 
 export function CompanyInfo() {
 	return (
 		<Wrapper>
-			<div>
+			<CompanyDescription>
 				<h3>
 					{content.company.title}: {content.company.name}
 				</h3>
@@ -25,8 +25,8 @@ export function CompanyInfo() {
 				<div>
 					email: <a href={`mailto:${content.email}`}>{content.email}</a>
 				</div>
-			</div>
-			<img src={companyLogo} alt={`Logo ${content.company.name}`} />
+			</CompanyDescription>
+			<Image src={companyLogo} alt={`Logo ${content.company.name}`} />
 		</Wrapper>
 	);
 }

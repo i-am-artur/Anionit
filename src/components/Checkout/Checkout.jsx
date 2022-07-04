@@ -1,5 +1,4 @@
 import { LinkBack } from '../../common/components/Link/LinkBack/LinkBack';
-import { Fragment } from 'react';
 import CartItem from './components/CartItem/CartItem';
 import { useSelector } from 'react-redux';
 import { getShoppingCart } from '../../store/selectors';
@@ -11,6 +10,7 @@ import {
 	ProductSelect,
 	ShoppingCart,
 	Total,
+	Wrapper,
 } from './checkout.styled';
 import { useMemo } from 'react';
 import products from '../../common/content/productsInfo';
@@ -23,7 +23,7 @@ export default function Checkout() {
 	}, [shoppingCart]);
 
 	return (
-		<Fragment>
+		<Wrapper>
 			<ProductSelect>
 				<LinkBack />
 				<Heading>Wózek sklepowy</Heading>
@@ -47,7 +47,7 @@ export default function Checkout() {
 					Zamówienie
 				</CheckoutButton>
 			</ClientInfo>
-		</Fragment>
+		</Wrapper>
 	);
 }
 

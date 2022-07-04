@@ -9,6 +9,7 @@ export const Image = styled.img`
 		width: 167px;
 	}
 `;
+
 export const Options = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -23,6 +24,7 @@ export const Options = styled.div`
 export const DesignationContent = styled.span`
 	color: ${(props) => (props.color ? props.color : 'inherit')};
 `;
+
 export const ProductContainer = styled.div`
 	margin-top: ${gap.section};
 
@@ -35,6 +37,7 @@ export const ProductContainer = styled.div`
 		align-items: center;
 	}
 `;
+
 export const ProductContent = styled(ProductWrapper)`
 	margin-top: 0;
 	width: 100%;

@@ -1,8 +1,8 @@
 import styled, { css, keyframes } from 'styled-components';
-import { colors, gap, width } from '../../common/Styles/theme';
+import { colors, gap } from '../../common/Styles/theme';
 import routeList from '../AppRouter/routeList';
 
-const slideUp = keyframes`
+const burgerGlow = keyframes`
   0% {
   	box-shadow: none;
   }
@@ -22,7 +22,7 @@ export const Wrapper = styled.div`
 		pathname === routeList.home ? 'white' : colors.main};
 
 	.alert-enter-active {
-		animation: ${slideUp} 4s;
+		animation: ${burgerGlow} 4s;
 	}
 `;
 
@@ -35,6 +35,7 @@ export const Component = styled.header`
 	padding: ${gap.general};
 	position: relative;
 `;
+
 export const Options = styled.div`
 	display: flex;
 	align-items: center;
@@ -51,6 +52,7 @@ const CartItems_Quantity = css`
 		justify-content: center;
 		align-items: center;
 		border-radius: 50%;
+		color: white;
 
 		${({ items_quantity }) => {
 			if (items_quantity > 0) {
