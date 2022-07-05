@@ -16,13 +16,9 @@ export default function Home() {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		document.body.style.overflow = 'hidden';
 		dispatch(setHomeAnimationIsDone(false));
-
-		return () => {
-			document.body.style.overflow = 'auto';
-		};
 	}, [dispatch]);
+
 	return (
 		<Section>
 			<CSSTransition

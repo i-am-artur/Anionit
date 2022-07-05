@@ -15,7 +15,7 @@ root.render(
 		<GlobalStyles />
 		{/*<React.StrictMode>*/}
 		<Provider store={store}>
-			<BrowserRouter>
+			<BrowserRouter basename='/Portfolio/anionit'>
 				<App />
 			</BrowserRouter>
 		</Provider>
